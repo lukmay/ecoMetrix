@@ -8,12 +8,12 @@ void activityLED(int pin, unsigned long interval)
     {
         if (state)
         {
-            Serial.println("[MCU still active]");
+            // Serial.println("[MCU still active]");
             digitalWrite(pin, HIGH);
         }
         else
         {
-            Serial.println("[MCU still active]");
+            // Serial.println("[MCU still active]");
             digitalWrite(pin, LOW);
         }
 

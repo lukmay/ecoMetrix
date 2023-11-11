@@ -6,6 +6,7 @@ void setup()
 {
     Serial.begin(115200);
     Serial.println("Resetting EEPROM");
+    EEPROM.begin(128);
 }
 
 void loop()
@@ -17,5 +18,8 @@ void loop()
     }
 
     if (i == EEPROM.length() - 1 || i == 127)
+    {
         Serial.println("EEPROM is reset!");
+        EEPROM.commit();
+    }
 }
