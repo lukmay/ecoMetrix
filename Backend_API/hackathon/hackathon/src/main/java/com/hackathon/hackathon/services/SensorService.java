@@ -78,4 +78,8 @@ public class SensorService {
     public List<Sensor> getAllSensors() {
         return sensorRepository.findAll();
     }
+
+    public List<Sensor> getAllUnacceptedSensors() {
+        return sensorRepository.findAllByAccepted(false);
+    }
 }

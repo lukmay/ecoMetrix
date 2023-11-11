@@ -2,6 +2,7 @@ package com.hackathon.hackathon.api;
 
 import com.hackathon.hackathon.dto.RoomDTO;
 import com.hackathon.hackathon.dto.SensorDTO;
+import com.hackathon.hackathon.dto.SensorShortDTO;
 import com.hackathon.hackathon.model.Room;
 import com.hackathon.hackathon.model.Sensor;
 import com.hackathon.hackathon.services.RoomService;
@@ -9,12 +10,12 @@ import com.hackathon.hackathon.services.SensorService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -75,6 +76,20 @@ public class WebAppController {
                 .collect(Collectors.toList());
         return ResponseEntity.ok(roomDTOs);
     }
+
+    @GetMapping("/unAcceptedSensors")
+    public ResponseEntity<List<SensorShortDTO>> getAllUnAcceptedSensors() {
+        List<Sensor> unacceptedSensors = sensorService.getAllUnacceptedSensors();
+        List<SensorShortDTO> sensorDTOs = new ArrayList<>();
+        for (Sensor sensor : unacceptedSensors) {
+            SensorShortDTO sensorShortDTO = new SensorShortDTO(sensor.getSensorID(), sensor.getType());
+            sensorDTOs.add(sensorShortDTO);
+        }
+
+        return ResponseEntity.ok(sensorDTOs);
+    }
+
+
 
 
 }
