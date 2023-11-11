@@ -11,13 +11,15 @@ unsigned int registerSensor(HttpClient client, SensorType sensorType, int index)
 
     switch (sensorType)
     {
-    case SensorType::eHumidityTemperature:
+    case SensorType::eHumidity:
         errorCode = client.post(hostname, 8080, "/api/v1/sensor/create/HumidityAndTemperature");
         break;
     case SensorType::eLightLevel:
         errorCode = client.post(hostname, 8080, "/api/v1/sensor/create/LightLevel");
         break;
-
+    case SensorType::eTemperature:
+        errorCode = client.post(hostname, 8080, "/api/v1/sensor/create/Temperature");
+        break;
     default:
         break;
     }

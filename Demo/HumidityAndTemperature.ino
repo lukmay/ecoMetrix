@@ -47,7 +47,7 @@ HumidityAndTemperatureMeasurement startTest(int pin)
     return {humidity, temperature};
 }
 
-void humidityAndTemperature(int pin, unsigned long updateRate)
+MeasurementResult humidity(int pin, unsigned long updateRate)
 {
     static unsigned long lastMeasurement = millis();
 
@@ -56,9 +56,25 @@ void humidityAndTemperature(int pin, unsigned long updateRate)
     {
         const auto data = startTest(pin);
 
-        Serial.println("Humidity = " + String(data.humidity, 1) + "%");
-        Serial.println("Temperature = " + String(data.temperature, 1) + "C");
+        lastMeasurement = currentMillis;
+        return {true, data.humidity};
+    }
+
+    return {false, 0.0f};
+}
+
+MeasurementResult temperatureSingleWire(int pin, unsigned long updateRate)
+{
+    static unsigned long lastMeasurement = millis();
+
+    const unsigned long currentMillis = millis();
+    if (lastMeasurement + updateRate < currentMillis)
+    {
+        const auto data = startTest(pin);
 
         lastMeasurement = currentMillis;
+        return {true, data.temperature};
     }
+
+    return {false, 0.0f};
 }
