@@ -60,6 +60,10 @@ SensorState temperatureOneState{};
 // WiFi
 const char* ssid = "openAiR";
 
+// API
+WiFiClient wifi;
+HttpClient httpClient(wifi, "136.244.87.238", 8080);
+
 void setup()
 {
     Serial.begin(115200);
@@ -96,9 +100,6 @@ void loop()
         activityLED(BLINKY_LED, 200);
         return;
     }
-
-    WiFiClient wifiClient;
-    HttpClient httpClient(wifiClient);
 
     if (humidityState.id != 0)
     {
