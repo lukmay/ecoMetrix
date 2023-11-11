@@ -13,6 +13,8 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import java.util.Arrays;
 
+import static org.springframework.security.config.Customizer.withDefaults;
+
 @Configuration
 @EnableWebSecurity
 @RequiredArgsConstructor
@@ -20,14 +22,13 @@ public class WebSecurityConfig {
 
 
     @Bean
-    public HttpFirewall httpFirewall() {
-        StrictHttpFirewall firewall = new
-                StrictHttpFirewall();
-        firewall.setAllowUrlEncodedPercent(true);
-        firewall.setAllowUrlEncodedSlash(true);
-        firewall.setAllowSemicolon(true);
-        firewall.setAllowedHttpMethods(Arrays.asList("GET", "POST", "PUT", "DELETE"));
-        return firewall;
+    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+        http
+                .authorizeHttpRequests((authz) -> authz
+                        .anyRequest().permitAll()
+                )
+                .httpBasic(withDefaults());
+        return http.build();
     }
 
 
