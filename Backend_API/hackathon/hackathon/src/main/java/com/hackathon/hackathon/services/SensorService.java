@@ -27,7 +27,7 @@ public class SensorService {
         sensor.setType(sensorType);
         sensor.setData(Collections.emptyList());
         sensor.setAccepted(false);
-        sensor.setAvailable(true);
+        sensor.setAvailable(false);
         sensorRepository.save(sensor);
         return sensor;
 
