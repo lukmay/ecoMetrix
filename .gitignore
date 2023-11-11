@@ -26,3 +26,6 @@ Documentation/.$ecoMetrics.drawio.bkp
 
 # VS Code
 .vscode
+
+# Arduino
+build
