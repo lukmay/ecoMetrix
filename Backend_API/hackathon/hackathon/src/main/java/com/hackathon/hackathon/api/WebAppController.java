@@ -1,9 +1,6 @@
 package com.hackathon.hackathon.api;
 
-import com.hackathon.hackathon.dto.CompanyOverviewDTO;
-import com.hackathon.hackathon.dto.RoomDTO;
-import com.hackathon.hackathon.dto.SensorDTO;
-import com.hackathon.hackathon.dto.SensorShortDTO;
+import com.hackathon.hackathon.dto.*;
 import com.hackathon.hackathon.model.Room;
 import com.hackathon.hackathon.model.Sensor;
 import com.hackathon.hackathon.services.RoomService;
@@ -98,12 +95,21 @@ public class WebAppController {
         return ResponseEntity.ok(summary);
     }
 
-/*    @GetMapping("/summaryRooms")
-    public ResponseEntity<List<CompanyOverviewDTO>> getSensorSummary() {
+    @GetMapping("/summaryRooms/{room_id}")
+    public ResponseEntity<List<RoomTopLevel>> getSensorSummary(@PathVariable("room_id") Long roomId, @RequestParam("from") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime from,
+                                                               @RequestParam("to") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime to) {
+        Optional<Room> roomOptional = roomService.getRoomByID(roomId);
 
-        List<CompanyOverviewDTO> summary = roomService.getSensorSummary(from, to);
+        if (roomOptional.isEmpty()) {
+            return ResponseEntity.notFound().build();
+        }
+
+        Room room = roomOptional.get();
+        List<RoomTopLevel> summary = roomService.getSensorSummaryRooms(room, from, to);
         return ResponseEntity.ok(summary);
-    }*/
+    }
+
+
 
 
 
