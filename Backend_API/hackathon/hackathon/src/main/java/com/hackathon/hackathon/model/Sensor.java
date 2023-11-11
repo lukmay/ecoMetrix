@@ -32,7 +32,7 @@ public class Sensor {
     @JoinColumn(name = "room_id")
     private Room room;
 
-    @OneToMany
+    @OneToMany(mappedBy = "sensor", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<SensorData> data;
 
 }
