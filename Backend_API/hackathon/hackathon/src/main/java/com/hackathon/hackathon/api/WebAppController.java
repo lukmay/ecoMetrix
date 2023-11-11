@@ -89,14 +89,14 @@ public class WebAppController {
         return ResponseEntity.ok(sensorDTOs);
     }
 
-    @GetMapping("/summaryAll")
+/*    @GetMapping("/summaryAll")
     public ResponseEntity<List<CompanyOverviewDTO>> getSensorSummary(
             @RequestParam("from") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime from,
             @RequestParam("to") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime to) {
 
         List<CompanyOverviewDTO> summary = roomService.getSensorSummary(from, to);
         return ResponseEntity.ok(summary);
-    }
+    }*/
 
 
 
