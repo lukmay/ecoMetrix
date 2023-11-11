@@ -1,5 +1,6 @@
 package com.hackathon.hackathon.api;
 
+import com.hackathon.hackathon.dto.CompanyOverviewDTO;
 import com.hackathon.hackathon.dto.RoomDTO;
 import com.hackathon.hackathon.dto.SensorDTO;
 import com.hackathon.hackathon.dto.SensorShortDTO;
@@ -9,12 +10,11 @@ import com.hackathon.hackathon.services.RoomService;
 import com.hackathon.hackathon.services.SensorService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -87,6 +87,15 @@ public class WebAppController {
         }
 
         return ResponseEntity.ok(sensorDTOs);
+    }
+
+    @GetMapping("/summaryAll")
+    public ResponseEntity<List<CompanyOverviewDTO>> getSensorSummary(
+            @RequestParam("from") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime from,
+            @RequestParam("to") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime to) {
+
+        List<CompanyOverviewDTO> summary = roomService.getSensorSummary(from, to);
+        return ResponseEntity.ok(summary);
     }
 
 
