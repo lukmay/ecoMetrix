@@ -4,6 +4,12 @@ public enum SensorType {
     Electricity,
     People,
     Garbage,
-    AirQuality
+    AirQuality,
+    HumidityAndTemperature,
+    Temperature,
+    LightLevel,
+    Weight
+
+
 
 }

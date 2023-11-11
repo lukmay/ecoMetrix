@@ -78,6 +78,20 @@ public class ManageElementsController {
         return ResponseEntity.status(HttpStatus.OK).build();
     }
 
+    @PostMapping("/sensor/{sensor_id}/update")
+    public ResponseEntity<Object> updateSensor(@PathVariable("sensor_id") Long sensorId) {
+        Optional<Sensor> sensorOptional = sensorService.getSensorByID(sensorId);
+
+        if (sensorOptional.isEmpty()) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Sensor not found");
+        }
+
+        Sensor sensor = sensorOptional.get();
+        sensorService.updateSensor(sensor);
+
+        return ResponseEntity.status(HttpStatus.OK).build();
+    }
+
 
 
 
