@@ -24,8 +24,7 @@ public class WebSecurityConfig {
         http
                 .authorizeHttpRequests((authz) -> authz
                         .anyRequest().permitAll()
-                )
-                .httpBasic(withDefaults());
+                );
         return http.build();
     }
 
