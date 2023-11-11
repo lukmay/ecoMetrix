@@ -1,0 +1,53 @@
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 15%;
+}
+.ecometrix_h1 {
+    font-size: 1.5rem;
+    padding-left: 20px;
+}
+
+.sidebar_items {
+    background-color: whitesmoke;
+
+    display: flex;
+    flex-direction: column;
+    padding: 1.25rem 0;
+
+    height: 100vh;
+    border-radius: 0 50px 50px 0;
+    color: #3b5284;
+}
+
+.sidebar_item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out; /* Hinzugefügt: Übergang für die Hintergrundfarbe */
+    padding: 20px;
+}
+
+.sidebar_item.clicked {
+    background-color: lightgray;
+    color: white;
+}
+
+.sidebar_item:hover {
+    background-color: lightgray; /* Hinzugefügt: Hintergrundfarbe ändert sich bei Hover */
+    /* Hinzugefügt: Randradius auf den hover-Effekt anwenden */
+    color: white; /* Hinzugefügt: Textfarbe ändert sich bei Hover */
+    /* border-radius: 0 50px 50px 0; */
+}
+
+.sidebar_item i {
+    font-size: 1.3rem;
+    margin-right: 10px;
+}
+
+.sidebar_item p {
+    font-size: 1.2rem;
+}

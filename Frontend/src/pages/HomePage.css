@@ -1,0 +1,55 @@
+/* .main_data_items {
+    display: flex;
+    justify-content: center;
+} */
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px; /* Abstand zwischen Grid-Elementen */
+    padding-left: 10%;
+    padding-top: 2rem;
+    margin: 0 auto;
+    width: 1000px;
+}
+
+.welcome_item {
+    background-color: #5baba0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-radius: 30px;
+    grid-column: span 3;
+    padding: 20px;
+}
+.button-container {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    flex-grow: 1; /* Füllt den verfügbaren Platz zwischen den beiden Divs */
+}
+.headline_item {
+    grid-column: span 3;
+    padding-left: 20px;
+    color: #3b5284;
+}
+.item_one {
+    background-color: lightblue;
+    border-radius: 30px;
+    padding: 20px;
+}
+
+.item_two {
+    background-color: lightsalmon;
+    border-radius: 30px;
+    grid-column: span 2;
+
+    padding: 20px;
+}
+
+.item_three {
+    background-color: lightgreen;
+    border-radius: 30px;
+    grid-column: span 2;
+    padding: 20px;
+}

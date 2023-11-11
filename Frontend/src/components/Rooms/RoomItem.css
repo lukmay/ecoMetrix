@@ -1,0 +1,12 @@
+.room-item {
+    min-width: 350px;
+    background-color: whitesmoke;
+    border-radius: 30px;
+    color: #3b5284;
+    padding: 5%;
+    margin: 3%;
+}
+
+h2 {
+    color: #3b5284;
+}

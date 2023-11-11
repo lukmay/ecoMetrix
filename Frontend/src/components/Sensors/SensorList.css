@@ -1,0 +1,60 @@
+/* .card_modal {
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    border: 1px solid #ccc;
+    margin: 0 auto;
+}
+
+.close-button {
+    cursor: pointer;
+} */
+
+.additional-sensor {
+    border: 1px solid #ccc;
+    min-width: 350px;
+    border-radius: 8px;
+    padding: 5%;
+    margin: 20px 10px;
+    background-color: whitesmoke;
+    color: #3b5284;
+    font-size: 1.25rem;
+}
+label {
+    display: block;
+}
+span {
+    font-family: "Poppins-Md";
+}
+.additional-sensor button {
+    margin-top: 5%;
+    display: block;
+}
+.additional-elements {
+    margin-bottom: 2%;
+}
+.additional-element {
+    border: 1px solid #ccc;
+    min-width: 200px;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 0 10px;
+    background-color: whitesmoke;
+    color: #3b5284;
+}
+
+.additional-element h2 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+/* .additional-element button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 12px;
+    cursor: pointer;
+} */
