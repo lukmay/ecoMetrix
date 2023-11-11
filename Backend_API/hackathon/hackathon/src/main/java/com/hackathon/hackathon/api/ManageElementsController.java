@@ -1,6 +1,8 @@
 package com.hackathon.hackathon.api;
 
 
+import com.hackathon.hackathon.dto.SensorAcceptanceDTO;
+import com.hackathon.hackathon.dto.SensorDTO;
 import com.hackathon.hackathon.model.Room;
 import com.hackathon.hackathon.model.Sensor;
 import com.hackathon.hackathon.services.RoomService;
@@ -79,7 +81,8 @@ public class ManageElementsController {
     }
 
     @PostMapping("/sensor/{sensor_id}/update")
-    public ResponseEntity<Object> updateSensor(@PathVariable("sensor_id") Long sensorId) {
+    public ResponseEntity<Object> updateSensor(@PathVariable("sensor_id") Long sensorId,
+                                               @RequestBody SensorAcceptanceDTO sensorAcceptanceDTO) {
         Optional<Sensor> sensorOptional = sensorService.getSensorByID(sensorId);
 
         if (sensorOptional.isEmpty()) {
@@ -87,9 +90,19 @@ public class ManageElementsController {
         }
 
         Sensor sensor = sensorOptional.get();
+        sensor.setAvailable(sensorAcceptanceDTO.isAccepted());
+        sensor.setUpdateRateInMS(sensorAcceptanceDTO.getUpdateRateInMS());
+
+        Optional<Room> roomOptional = roomService.getRoomByID(sensorAcceptanceDTO.getRoomID());
+        if (roomOptional.isPresent()) {
+            sensor.setRoom(roomOptional.get());
+        } else {
+            sensor.setRoom(null);
+        }
+
         sensorService.updateSensor(sensor);
 
-        return ResponseEntity.status(HttpStatus.OK).build();
+        return ResponseEntity.ok().build();
     }
 
 

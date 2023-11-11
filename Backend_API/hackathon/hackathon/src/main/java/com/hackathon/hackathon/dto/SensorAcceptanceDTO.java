@@ -8,12 +8,6 @@ import lombok.Data;
 @AllArgsConstructor
 public class SensorAcceptanceDTO {
 
-    private Long sensorID;
-
-    private SensorType type;
-
-    private boolean available;
-
     private boolean accepted;
 
     private int updateRateInMS;
