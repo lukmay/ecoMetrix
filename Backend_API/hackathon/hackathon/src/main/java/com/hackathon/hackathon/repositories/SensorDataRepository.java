@@ -11,5 +11,7 @@ public interface SensorDataRepository extends JpaRepository<SensorData, Long> {
 
     List<SensorData> findBySensorAndTimestampBetween(Sensor sensor, LocalDateTime timestamp, LocalDateTime timestamp2);
 
+    List<SensorData> findByTimestampBetween(LocalDateTime timestamp, LocalDateTime timestamp2);
+
 
 }
