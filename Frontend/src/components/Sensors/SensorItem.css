@@ -1,0 +1,31 @@
+.sensor-item {
+    width: 350px;
+    background-color: whitesmoke;
+    border-radius: 30px;
+    color: #3b5284;
+    padding: 5%;
+    margin: 15px;
+}
+
+h2 {
+    color: #3b5284;
+}
+
+.select-wrapper {
+    position: relative;
+    display: inline-block;
+    margin-top: 2%;
+    margin-bottom: 7%;
+    text-align: left;
+}
+
+.select-wrapper select {
+    border: 1px solid #3b5284;
+    border-radius: 50px;
+    padding: 1em 5em;
+}
+
+.select-wrapper select:focus {
+    outline: none;
+    border-color: #3b5284;
+}

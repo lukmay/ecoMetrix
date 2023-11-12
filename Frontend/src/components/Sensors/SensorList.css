@@ -1,16 +1,12 @@
-/* .card_modal {
-    height: 200px;
+.sensor-items {
+    max-width: 70vw;
+    padding-left: 10%;
+    padding-top: 2%;
+    margin: 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #fff;
-    border: 1px solid #ccc;
-    margin: 0 auto;
 }
-
-.close-button {
-    cursor: pointer;
-} */
 
 .additional-sensor {
     border: 1px solid #ccc;
@@ -37,7 +33,7 @@ span {
 }
 .additional-element {
     border: 1px solid #ccc;
-    min-width: 200px;
+    max-width: 70vw;
     border-radius: 8px;
     padding: 10px;
     margin: 0 10px;
@@ -49,12 +45,3 @@ span {
     font-size: 18px;
     margin-bottom: 5px;
 }
-
-/* .additional-element button {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    padding: 8px 12px;
-    cursor: pointer;
-} */

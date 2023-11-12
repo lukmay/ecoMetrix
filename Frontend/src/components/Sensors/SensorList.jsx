@@ -29,7 +29,6 @@ const SensorList = ({ isOpen, onRequestClose }) => {
             fetch(
                 `http://136.244.87.238:8080/api/v1/management/sensor/${selectedSensor}/update`,
                 {
-                    // Hier war ein überflüssiges Anführungszeichen, das entfernt wurde
                     method: "POST",
                     body: JSON.stringify(requestBody),
                     headers: {
@@ -53,7 +52,7 @@ const SensorList = ({ isOpen, onRequestClose }) => {
     };
 
     return (
-        <section>
+        <section className="sensor-items">
             {sensorData.map((room) => (
                 <SensorItem
                     key={room.sensorID}

@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./DataItem1.css";
 import {
     ScatterChart,
     Scatter,

@@ -2,7 +2,7 @@
     display: inline-block;
     outline: none;
     cursor: pointer;
-    font-size: 14px;
+    font-size: 0.9rem;
     line-height: 1;
     border-radius: 500px;
     transition-property: background-color, border-color, color, box-shadow,
@@ -13,9 +13,8 @@
     min-width: 160px;
     text-transform: uppercase;
     white-space: normal;
-    font-weight: 700;
     text-align: center;
-    padding: 16px 14px 18px;
+    padding: 1em 2em;
     color: #fff;
     background-color: #3b5284;
 }

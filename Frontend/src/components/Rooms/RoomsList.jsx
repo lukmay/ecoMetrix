@@ -29,15 +29,13 @@ const RoomList = () => {
         fetchRoomList();
     }, []);
 
-    // Rendering
     if (isLoading) return <p>Loading...</p>;
     if (error) return <p>Error: {error}</p>;
 
-    console.log(data); // Hier füge den console.log hinzu
+    console.log(data);
     return (
-        <div>
+        <div className="room-items">
             {data.map((room) => (
-                // Für jeden Raum in den abgerufenen Daten erstellst du ein RoomItem und übergibst die Daten als Props
                 <RoomItem key={room.id} room={room} />
             ))}
         </div>

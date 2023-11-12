@@ -1,5 +1,4 @@
 import React from "react";
-import "./DataItem1.css";
 import {
     AreaChart,
     Area,
@@ -17,13 +16,20 @@ const DataItem1 = ({ data }) => {
         return null;
     }
 
+    const temperatures = data.dataTimeList.map((item) => item.data);
+    const minTemperature = Math.min(...temperatures);
+    const maxTemperature = Math.max(...temperatures);
+
     return (
         <div className="item_one">
             <h1>{data.sensorType}</h1>
             <ResponsiveContainer width="100%" height={300}>
                 <AreaChart data={data.dataTimeList}>
                     <XAxis dataKey="localDateTime" />
-                    <YAxis />
+                    <YAxis
+                        domain={[minTemperature, maxTemperature]}
+                        tickFormatter={(value) => `${value} °C`}
+                    />
                     <CartesianGrid stroke="#f5f5f5" />
                     <Tooltip />
                     <Legend />

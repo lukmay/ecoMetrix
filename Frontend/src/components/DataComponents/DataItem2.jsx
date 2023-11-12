@@ -1,5 +1,4 @@
 import React from "react";
-import "./DataItem1.css";
 import {
     AreaChart,
     Area,

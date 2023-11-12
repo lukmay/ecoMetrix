@@ -25,9 +25,8 @@
 .sidebar_item {
     display: flex;
     align-items: center;
-    margin-bottom: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease-in-out; /* Hinzugefügt: Übergang für die Hintergrundfarbe */
+    transition: background-color 0.3s ease-in-out;
     padding: 20px;
 }
 
@@ -37,10 +36,8 @@
 }
 
 .sidebar_item:hover {
-    background-color: lightgray; /* Hinzugefügt: Hintergrundfarbe ändert sich bei Hover */
-    /* Hinzugefügt: Randradius auf den hover-Effekt anwenden */
-    color: white; /* Hinzugefügt: Textfarbe ändert sich bei Hover */
-    /* border-radius: 0 50px 50px 0; */
+    background-color: lightgray;
+    color: white;
 }
 
 .sidebar_item i {

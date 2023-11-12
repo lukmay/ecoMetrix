@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./SensorItem.css";
 
 const SensorItem = ({ id, name, sensorData, onUpdateSensor }) => {
     const [selectedSensor, setSelectedSensor] = useState("");
@@ -9,7 +10,7 @@ const SensorItem = ({ id, name, sensorData, onUpdateSensor }) => {
     };
 
     return (
-        <div className="additional-sensor">
+        <div className="sensor-item">
             {/* <h2>ID: {id}</h2> */}
             <p>
                 Sensorname: <span>{name}</span>
@@ -19,19 +20,21 @@ const SensorItem = ({ id, name, sensorData, onUpdateSensor }) => {
                     <label htmlFor={`sensorDropdown-${id}`}>
                         Wähle einen Sensor:
                     </label>
-                    <select
-                        id={`sensorDropdown-${id}`}
-                        value={selectedSensor}
-                        onChange={(e) => setSelectedSensor(e.target.value)}
-                    >
-                        <option value="">-- Wähle einen Sensor --</option>
-                        <option
-                            key={sensorData.sensorID} // Beachten Sie, dass dies nicht mehr notwendig ist
-                            value={sensorData.sensorID}
+                    <div className="select-wrapper">
+                        <select
+                            id={`sensorDropdown-${id}`}
+                            value={selectedSensor}
+                            onChange={(e) => setSelectedSensor(e.target.value)}
                         >
-                            {sensorData.type}
-                        </option>
-                    </select>
+                            <option value="">-- Wähle einen Sensor --</option>
+                            <option
+                                key={sensorData.sensorID}
+                                value={sensorData.sensorID}
+                            >
+                                {sensorData.type}
+                            </option>
+                        </select>
+                    </div>
                     <button className="add_btn" onClick={handleUpdateClick}>
                         Update Sensor
                     </button>

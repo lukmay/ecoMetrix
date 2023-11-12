@@ -7,14 +7,6 @@ const SidenavBar = () => {
     const [activeItem, setActiveItem] = useState(null);
     const location = useLocation();
 
-    const handleSidebarOpen = () => {
-        setSidebarOpen(true);
-    };
-
-    const handleSidebarClose = () => {
-        setSidebarOpen(false);
-    };
-
     useEffect(() => {
         // Setze das aktive Element basierend auf dem aktuellen Pfad
         if (location.pathname === "/") {
@@ -27,12 +19,14 @@ const SidenavBar = () => {
     return (
         <aside className={`sidebar ${sidebarOpen ? "open" : ""}`}>
             <div className="sidebar_items">
-                <h1 className="ecometrix_h1">EcoMetrix</h1>
+                <h1 className="ecometrix_h1">
+                    <Link to="/">EcoMetrix</Link>
+                </h1>
 
                 <div
                     className={`sidebar_item ${
                         activeItem === "dashboard" ? "active" : ""
-                    }`}
+                    } ${activeItem === "dashboard" ? "clicked" : ""}`}
                     onClick={() => setActiveItem("dashboard")}
                 >
                     <p>
@@ -42,7 +36,7 @@ const SidenavBar = () => {
                 <div
                     className={`sidebar_item ${
                         activeItem === "rooms" ? "active" : ""
-                    }`}
+                    } ${activeItem === "rooms" ? "clicked" : ""}`}
                     onClick={() => setActiveItem("rooms")}
                 >
                     <p>
