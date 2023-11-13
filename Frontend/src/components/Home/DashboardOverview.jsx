@@ -3,9 +3,6 @@ import DataItem1 from "../DataComponents/DataItem1";
 import DataItem2 from "../DataComponents/DataItem2";
 import DataItem3 from "../DataComponents/DataItem3";
 import DataItem4 from "../DataComponents/DataItem4";
-// import "./HomePage.css";
-import WelcomeItem from "./WelcomeItem";
-import Headline from "./Headline";
 
 const DashboardOverview = () => {
     const [summary, setSummary] = useState([]);
@@ -50,7 +47,7 @@ const DashboardOverview = () => {
     if (isLoading) return <p>Loading...</p>;
     if (error) return <p>Error: {error}</p>;
 
-    console.log("Summary Data:", summary);
+    // console.log("Summary Data:", summary);
 
     return (
         <article>

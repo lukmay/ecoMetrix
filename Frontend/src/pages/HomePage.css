@@ -3,7 +3,6 @@
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 20px;
     padding-left: 10%;
-    padding-top: 2%;
     margin: 5% auto;
     max-width: 70vw;
 }
@@ -16,12 +15,13 @@
     border-radius: 30px;
     grid-column: span 3;
     padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 .button-container {
     display: flex;
     align-items: flex-end;
     justify-content: flex-end;
-    flex-grow: 1; /* Füllt den verfügbaren Platz zwischen den beiden Divs */
+    flex-grow: 1;
 }
 .headline_item {
     display: grid;
@@ -41,6 +41,7 @@
     border-radius: 30px;
     padding: 20px;
     grid-column: span 2;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
 .grid-container > article > .item_two {
@@ -48,7 +49,7 @@
     display: grid;
     border-radius: 30px;
     grid-column: span 1;
-
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     padding: 20px;
 }
 
@@ -57,6 +58,7 @@
     border-radius: 30px;
     padding: 20px;
     grid-column: span 3;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
 .love {

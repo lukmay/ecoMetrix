@@ -3,7 +3,7 @@ import "./SensorItem.css";
 
 const SensorItem = ({ id, name, sensorData, onUpdateSensor }) => {
     const [selectedSensor, setSelectedSensor] = useState("");
-    console.log(sensorData);
+    // console.log(sensorData);
 
     const handleUpdateClick = () => {
         onUpdateSensor(id, selectedSensor);

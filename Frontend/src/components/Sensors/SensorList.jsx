@@ -2,8 +2,7 @@ import React, { useEffect, useState } from "react";
 import SensorItem from "./SensorItem";
 import "./SensorList.css";
 
-const SensorList = ({ isOpen, onRequestClose }) => {
-    const [roomData, setRoomData] = useState([]);
+const SensorList = () => {
     const [sensorData, setSensorData] = useState([]);
 
     useEffect(() => {
